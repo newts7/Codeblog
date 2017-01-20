@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+<h2>PREVIOUS BLOG POSTS</h2>
+<table class="table"> 
+    <tr>
+        <td><b>Topic</b></td>
+        <td><b>Author</b></td>
+        <td><b>Date</b></td>
+    </tr>
+    {{for row in rows:}}
+  <tr>
+      <td> <a href="{{=URL('show',args=row.id)}}">{{=row.title}} </a> </td>
+      <td>{{=row.created_by.first_name}} {{=row.created_by.last_name}}</td>
+      <td>{{=row.created_on}}</td>
+  </tr>    
+    {{pass}}
+</table>
